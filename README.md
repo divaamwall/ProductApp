@@ -1,55 +1,70 @@
-📱 Product Shopping App
-Aplikasi E-Commerce sederhana berbasis Android yang dibuat menggunakan Jetpack Compose dan Clean Architecture. Aplikasi ini memungkinkan pengguna untuk menjelajahi daftar produk dengan fitur paginasi, melakukan pengurutan (sorting), dan mengelola keranjang belanja hingga proses checkout.
+# 📱 Product App
 
-🚀 Fitur Utama
-Paging Data: Memuat produk secara bertahap menggunakan Paging Library untuk efisiensi memori.
+> **Aplikasi E-Commerce modern berbasis Android yang dibangun dengan efisiensi dan skalabilitas menggunakan Clean Architecture.**
 
-Dynamic Sorting: Mengurutkan produk berdasarkan Nama (A-Z), Harga Terendah, atau Harga Tertinggi.
+Aplikasi ini dirancang untuk memberikan pengalaman belanja yang mulus dengan performa tinggi, memanfaatkan **Jetpack Compose** untuk antarmuka deklaratif dan **Hilt** untuk manajemen dependensi.
 
-Product Cart System:
+---
 
-Menambah/mengurangi jumlah produk langsung dari daftar.
+### 🚀 Fitur Utama
 
-Validasi stok produk secara real-time.
+* **📦 Paging Data** – Memuat ribuan produk secara efisien menggunakan *Paging Library* untuk meminimalkan penggunaan memori dan data.
+* **⚖️ Dynamic Sorting** – Fitur pengurutan fleksibel berdasarkan Nama (A-Z), Harga Terendah, atau Harga Tertinggi.
+* **🛒 Product Cart System** – Manajemen keranjang belanja yang intuitif:
+    * Tambah/kurang jumlah produk langsung dari kartu produk.
+    * **Validasi Stok**: Sistem secara otomatis mengunci penambahan jika melebihi stok tersedia.
+    * Kalkulasi total harga secara *real-time* di bagian footer.
+* **✨ Checkout Dialog** – Ringkasan pembelian yang bersih setelah transaksi berhasil dilakukan.
 
-Kalkulasi otomatis total harga di bagian footer.
+---
 
-Checkout Success Dialog: Ringkasan pembelian setelah transaksi berhasil.
+### 🛠️ Tech Stack
 
-🛠️ Tech Stack
-UI: Jetpack Compose (Material 3)
+| Layer | Technology |
+| :--- | :--- |
+| **UI Framework** | Jetpack Compose (Material 3) |
+| **Language** | Kotlin |
+| **Reactive Stream** | Kotlin Coroutines & Flow |
+| **Networking** | Retrofit & OkHttp |
+| **Image Loader** | Coil |
+| **Architecture** | Clean Architecture (Data, Domain, Presentation) |
 
-Asynchronous: Kotlin Coroutines & Flow
+---
 
-Networking: Retrofit & OkHttp
+### 🏗️ Arsitektur Proyek
+Aplikasi ini mengikuti prinsip **Clean Architecture** untuk memastikan kode mudah diuji (*testable*) dan mudah dipelihara:
 
-Image Loading: Coil
 
-Architecture: Clean Architecture (Data, Domain, Presentation)
 
-📖 Petunjuk Penggunaan
-1. Menjelajahi Produk
-Saat aplikasi dibuka, daftar produk akan dimuat secara otomatis. Anda dapat menggulir ke bawah, dan aplikasi akan memuat data baru (paginasi) tanpa mengganggu pengalaman pengguna.
+1.  **Data Layer**: Bertanggung jawab atas pengambilan data dari API (Remote) dan implementasi Repository.
+2.  **Domain Layer**: Pusat logika bisnis yang berisi Use Cases dan abstraksi Repository.
+3.  **Presentation Layer**: Mengelola UI State menggunakan ViewModel dan merender UI menggunakan Komponen Compose.
 
-2. Menggunakan Fitur Sorting
-Klik tombol "Sort by" di bagian kanan atas (di bawah Header).
+---
 
-Pilih opsi pengurutan yang diinginkan.
+### 📖 Petunjuk Penggunaan
 
-Daftar produk akan diperbarui secara otomatis sesuai kriteria yang dipilih.
+#### 1. Menjelajahi Produk
+Buka aplikasi dan daftar produk akan muncul secara otomatis. Gulir ke bawah untuk memuat data baru secara halus tanpa *lag* berkat integrasi Paging.
 
-3. Mengelola Keranjang Belanja
-Tekan tombol (+) pada kartu produk untuk menambah item ke keranjang.
+#### 2. Menggunakan Fitur Sorting
+* Klik tombol **"Sort by"** di bagian kanan atas.
+* Pilih kriteria pengurutan yang diinginkan dari menu *dropdown*.
+* Daftar produk akan diperbarui secara otomatis sesuai pilihan Anda.
 
-Tekan tombol (-) untuk mengurangi jumlah.
+#### 3. Mengelola Keranjang Belanja
+* Tekan tombol **(+)** untuk menambah item.
+* Tekan tombol **(-)** untuk mengurangi jumlah (item akan dihapus dari keranjang jika jumlah mencapai nol).
+* Pantau total biaya belanja Anda di bar bagian bawah (**Footer**).
 
-Aplikasi akan mencegah penambahan jika jumlah melebihi stok yang tersedia.
+#### 4. Checkout
+* Setelah selesai memilih, klik tombol **"Checkout"**.
+* Sebuah pop-up sukses akan muncul menampilkan total produk dan total nominal dalam format Rupiah.
+* Klik **"Close"** untuk mereset belanjaan dan memulai sesi baru.
 
-Lihat total biaya belanja Anda secara real-time di bar bagian bawah (Footer).
+---
 
-4. Checkout
-Setelah selesai memilih produk, klik tombol "Checkout".
-
-Akan muncul pop-up sukses yang menampilkan total produk dan total biaya yang harus dibayar.
-
-Klik "Close" untuk mengosongkan keranjang dan memulai belanja baru.
+### 💻 Cara Instalasi
+1. Clone repositori ini:
+   ```bash
+   git clone [https://github.com/username/product-app.git](https://github.com/username/product-app.git)
