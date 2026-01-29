@@ -67,4 +67,5 @@ Buka aplikasi dan daftar produk akan muncul secara otomatis. Gulir ke bawah untu
 ### 💻 Cara Instalasi
 1. Clone repositori ini:
    ```bash
-   git clone [https://github.com/username/product-app.git](https://github.com/username/product-app.git)
+   git clone https://github.com/username/product-app.git
+2. Atau Download APK melalui link berikut: https://drive.google.com/file/d/1yQZkOe0XJPTQlGOtUv74tceKQr96xSpG/view?usp=sharing
